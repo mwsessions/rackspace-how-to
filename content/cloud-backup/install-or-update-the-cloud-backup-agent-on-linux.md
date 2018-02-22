@@ -63,7 +63,7 @@ or superuser privileges.
 
 4. Add `driveclient` to the apt sources list.
 
-       echo "deb [arch=amd64] http://agentrepo.drivesrvr.com/debian serveragent main" | tee /etc/apt/sources.list.d/driveclient.list
+       echo "deb [arch=amd64] http://agentrepo.drivesrvr.com/debian serveragent main" | sudo tee /etc/apt/sources.list.d/driveclient.list
 
 5. Update the `apt` repository information. Install with the `-f` option. This
 option fixes any outstanding package dependency issues on the system.
@@ -73,7 +73,7 @@ option fixes any outstanding package dependency issues on the system.
 
 6. Install the updater and all dependencies.
 
-       apt-get install -q -y cloudbackup-updater
+       sudo apt-get install -q -y cloudbackup-updater
 
     The updater installs the agent and sets the agent to start at boot.
 
@@ -119,7 +119,7 @@ answer `yes`.
 
 10. Start the agent.
 
-       sudo service driveclient start
+        sudo service driveclient start
 
 ### Install the agent on RPM-based systems, such as CentOS &reg;, Fedora &reg;, and Red Hat &reg;
 
